@@ -96,7 +96,9 @@ public class StepDefPG {
     public void cleanUp(Scenario scenario) throws IOException {
 
         scenario.log("---> scenario: "+scenario.getStatus());
-
+        if(scenario.getName().equals("PTA-logout")){
+            driver.close();
+        }
 
 //        TakesScreenshot tk = (TakesScreenshot) driver;
 //        scenario.attach(tk.getScreenshotAs(OutputType.BYTES),"image/png","Screenshot");
